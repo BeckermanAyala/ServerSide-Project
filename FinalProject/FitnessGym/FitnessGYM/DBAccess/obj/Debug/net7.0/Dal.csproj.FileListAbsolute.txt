@@ -1,0 +1,14 @@
+H:\c#\FinalProject\FitnessGym\FitnessGYM\DBAccess\bin\Debug\net7.0\Dal.deps.json
+H:\c#\FinalProject\FitnessGym\FitnessGYM\DBAccess\bin\Debug\net7.0\Dal.runtimeconfig.json
+H:\c#\FinalProject\FitnessGym\FitnessGYM\DBAccess\bin\Debug\net7.0\Dal.dll
+H:\c#\FinalProject\FitnessGym\FitnessGYM\DBAccess\bin\Debug\net7.0\Dal.pdb
+H:\c#\FinalProject\FitnessGym\FitnessGYM\DBAccess\obj\Debug\net7.0\Dal.csproj.AssemblyReference.cache
+H:\c#\FinalProject\FitnessGym\FitnessGYM\DBAccess\obj\Debug\net7.0\Dal.GeneratedMSBuildEditorConfig.editorconfig
+H:\c#\FinalProject\FitnessGym\FitnessGYM\DBAccess\obj\Debug\net7.0\Dal.AssemblyInfoInputs.cache
+H:\c#\FinalProject\FitnessGym\FitnessGYM\DBAccess\obj\Debug\net7.0\Dal.AssemblyInfo.cs
+H:\c#\FinalProject\FitnessGym\FitnessGYM\DBAccess\obj\Debug\net7.0\Dal.csproj.CoreCompileInputs.cache
+H:\c#\FinalProject\FitnessGym\FitnessGYM\DBAccess\obj\Debug\net7.0\Dal.dll
+H:\c#\FinalProject\FitnessGym\FitnessGYM\DBAccess\obj\Debug\net7.0\refint\Dal.dll
+H:\c#\FinalProject\FitnessGym\FitnessGYM\DBAccess\obj\Debug\net7.0\Dal.pdb
+H:\c#\FinalProject\FitnessGym\FitnessGYM\DBAccess\obj\Debug\net7.0\Dal.genruntimeconfig.cache
+H:\c#\FinalProject\FitnessGym\FitnessGYM\DBAccess\obj\Debug\net7.0\ref\Dal.dll
