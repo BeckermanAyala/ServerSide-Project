@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using BL.BLlmplementaiton;
 using BL.BLapi;
 using BL.Bo;
+using Dal;
+
+
 using Microsoft.Extensions.DependencyInjection;
 
 

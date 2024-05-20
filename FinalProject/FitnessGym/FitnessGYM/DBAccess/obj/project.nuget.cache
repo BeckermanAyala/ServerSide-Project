@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "R08U/ZMn/9xAJhUGdJdePpuxvfNS7g+0yqleNWaDztRHCqdcGRLoR1OoAF5hWq83/+wk+qzNNGok9frf3Vctww==",
+  "dgSpecHash": "jtblATBig0gZYrx3nYLsZ4agMQcSMKEjozZMKLtvK27NKJquGEdewgmU4QKNZZIz6ud3lbRq71Vv72vg2MjpZg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\USER\\Desktop\\‏‏תיקיה חדשה\\FinalProject\\FitnessGym\\FitnessGYM\\DBAccess\\Dal.csproj",
+  "projectFilePath": "C:\\Users\\USER\\Desktop\\aaaa\\ServerSide-Project\\FinalProject\\FitnessGym\\FitnessGYM\\DBAccess\\Dal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
