@@ -27,7 +27,7 @@ namespace BL
         public IPersonalCoursesRepo personalCourses { get; set; }
         public IPersonalSchduleRepo personalSchdule { get; }
         public IPersonalSubscriberRepo personalSubscriber { get; }
-        public IPersonalTeacherRepo PersonalTeacher { get; }
+        public IPersonalTeacherRepo personalTeacher { get; }
 
         public BLManager()
         {
@@ -45,15 +45,15 @@ namespace BL
             ServiceProvider provider = services.BuildServiceProvider();
 
             fullCourses = provider.GetRequiredService<IFullCoursesRepo>();
-            fullCourses = provider.GetRequiredService<IFullScheduleRepo>();
+            fullSchedule = provider.GetRequiredService<IFullScheduleRepo>();
 
-            fullCourses = provider.GetRequiredService<IFullTeacherRepo>();
+            fullTeacher = provider.GetRequiredService<IFullTeacherRepo>();
 
-            fullCourses = provider.GetRequiredService<IPersonalCoursesRepo>();
+            personalCourses = provider.GetRequiredService<IPersonalCoursesRepo>();
 
-            fullCourses = provider.GetRequiredService<IPersonalSchduleRepo>();
-            fullCourses = provider.GetRequiredService<IPersonalSubscriberRepo>();
-            fullCourses = provider.GetRequiredService<IPersonalTeacherRepo>();
+            personalSchdule = provider.GetRequiredService<IPersonalSchduleRepo>();
+            personalSubscriber = provider.GetRequiredService<IPersonalSubscriberRepo>();
+            personalTeacher = provider.GetRequiredService<IPersonalTeacherRepo>();
 
 
         }

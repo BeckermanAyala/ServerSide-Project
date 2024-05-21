@@ -11,7 +11,7 @@ public partial class Subscriber
 
     public string FirstName { get; set; } = null!;
 
-    public string? City { get; set; }
+    public string? City { get; set; } = null;
 
     public string SubscriptionType { get; set; } = null!;
 
