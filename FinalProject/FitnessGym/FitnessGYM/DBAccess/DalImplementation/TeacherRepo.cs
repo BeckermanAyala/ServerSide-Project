@@ -37,9 +37,9 @@ namespace Dal.DalImplementation
             return teacher;
          }
 
-        public Teacher Get(int id)
+        public Teacher Get(string name)
         {
-            return context.Teachers.Find(id);
+            return context.Teachers.Find(name);
         }
 
         public List<Teacher> GetAll()

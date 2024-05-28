@@ -1,5 +1,10 @@
-﻿using BL.BLapi;
+﻿using AutoMapper;
+using BL.BLapi;
 using BL.Bo;
+using Dal;
+using Dal.Dalapi;
+using Dal.DalImplementation;
+using Dal.Do;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,29 +15,45 @@ namespace BL.BLlmplementaiton
 {
     public class FullTeacherRepo : IFullTeacherRepo
     {
-        FullTeacher IFullTeacherRepo.Add(FullTeacher item)
+        ITeacher teacherRepo;
+        ICourses coursesRepo;
+        IMapper map;
+        public FullTeacherRepo(DalManager dalManager, IMapper map)
         {
-            throw new NotImplementedException();
+            this.teacherRepo = dalManager.teacher;
+            this.map = map;
         }
 
-        FullTeacher IFullTeacherRepo.Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        FullTeacher IFullTeacherRepo.Get(int id)
-        {
-            throw new NotImplementedException();
-        }
 
         List<FullTeacher> IFullTeacherRepo.GetAll()
         {
-            throw new NotImplementedException();
+            List<FullTeacher> listTeacherBl = new();
+            var data = teacherRepo.GetAll();
+            data.ForEach(teacher => listTeacherBl.Add(map.Map<FullTeacher>(teacher)));
+            return listTeacherBl;
+
         }
 
-        FullTeacher IFullTeacherRepo.Update(int id, FullTeacher item)
+        FullTeacher IFullTeacherRepo.Get(string name)
         {
-            throw new NotImplementedException();
+            
+            var teacher = teacherRepo.Get(name);
+
+            if (teacher == null)
+            {
+                return null;
+            }
+
+            FullTeacher fullTeacher = map.Map<FullTeacher>(teacher);
+
+            
+            fullTeacher.Courses = map.Map<List<Course>>(teacher.Courses);
+
+            return fullTeacher;
         }
     }
-}
+
+
+
+    }
+

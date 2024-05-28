@@ -10,9 +10,9 @@ namespace BL.BLapi
     public interface IFullCoursesRepo
     {
         List<FullCourses> GetAll();
-        FullCourses Get(int id);
-        FullCourses Add(FullCourses item);
-        FullCourses Update(int id, FullCourses item);
-        FullCourses Delete(int id);
+        //FullCourses Get(int id);
+        //FullCourses Add(FullCourses item);
+        //FullCourses Update(int id, FullCourses item);
+        //FullCourses Delete(int id);
     }
 }
