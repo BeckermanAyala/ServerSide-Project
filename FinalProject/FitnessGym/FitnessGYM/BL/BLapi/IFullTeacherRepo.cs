@@ -10,7 +10,7 @@ namespace BL.BLapi
     public interface IFullTeacherRepo
     {
         List<FullTeacher> GetAll();
-        FullTeacher Get(string name);
+        //FullTeacher Get(string name);
         //FullTeacher Add(FullTeacher item);
         //FullTeacher Update(int id, FullTeacher item);
         //FullTeacher Delete(int id);

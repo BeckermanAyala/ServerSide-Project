@@ -15,10 +15,10 @@ namespace BL.Bo
 
             FirstName = firstName;
 
-            Courses = courses;
+       
         }    
         public string LastName { get; set; }    
         public string FirstName { get; set; }
-        public virtual ICollection<Course> Courses { get; set; } 
+       
     }
 }

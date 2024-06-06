@@ -16,56 +16,56 @@ namespace Dal.DalImplementation
             this.context = context;
         }
 
-            public Subscriber Add(Subscriber subscriber)
-        {
-            if (context.Subscribers.Find(subscriber) != null)
-            {
-                context.Subscribers.Add(subscriber);
-                context.SaveChanges();
-                return subscriber;
-            }
-            return null;
-        }
+        //    public Subscriber Add(Subscriber subscriber)
+        //{
+        //    if (context.Subscribers.Find(subscriber) != null)
+        //    {
+        //        context.Subscribers.Add(subscriber);
+        //        context.SaveChanges();
+        //        return subscriber;
+        //    }
+        //    return null;
+        //}
 
-        public Subscriber Delete(int id)
-        {
-            Subscriber subscriber = Get(id);
-            if (subscriber != null)
-            { 
-                context.Subscribers.Remove(subscriber);
-                context.SaveChanges();
+        //public Subscriber Delete(int id)
+        //{
+        //    Subscriber subscriber = Get(id);
+        //    if (subscriber != null)
+        //    { 
+        //        context.Subscribers.Remove(subscriber);
+        //        context.SaveChanges();
 
-            }
-            return subscriber;
-        }
+        //    }
+        //    return subscriber;
+        //}
 
-        public Subscriber Get(int id)
-        {
-            return context.Subscribers.Find(id);
-        }
+        //public Subscriber Get(int id)
+        //{
+        //    return context.Subscribers.Find(id);
+        //}
 
         public List<Subscriber> GetAll()
         {
-            List<Subscriber> result = context.Subscribers.ToList();
-            return result;
+            //List<Subscriber> result = context.Subscribers.ToList();
+            return context.Subscribers.ToList();
         }
 
-        public Subscriber Update(int id, Subscriber subscriber)
-        {
-            var existingSubscriber = context.Subscribers.FirstOrDefault(c => c.SubscriberId == id);
+        //public Subscriber Update(int id, Subscriber subscriber)
+        //{
+        //    var existingSubscriber = context.Subscribers.FirstOrDefault(c => c.SubscriberId == id);
 
-            if (existingSubscriber != null)
-            {
-                //existingCourse.CodeCourse = course.CodeCourse;
-                //existingCourse.Property2 = course.Property2;
-                context.Subscribers.Update(existingSubscriber);
-                context.SaveChanges();
+        //    if (existingSubscriber != null)
+        //    {
+        //        //existingCourse.CodeCourse = course.CodeCourse;
+        //        //existingCourse.Property2 = course.Property2;
+        //        context.Subscribers.Update(existingSubscriber);
+        //        context.SaveChanges();
 
-                return existingSubscriber;
-            }
+        //        return existingSubscriber;
+        //    }
 
-            return null;
-        }
+        //    return null;
+        //}
     }
 }
     

@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 
 namespace Dal.Dalapi
 {
-    public interface ITeacher: IRepo<Teacher>
+    public interface ITeacher
     {
+        List<Teacher> GetAll();
+        //Teacher Get(string name);
     }
 }

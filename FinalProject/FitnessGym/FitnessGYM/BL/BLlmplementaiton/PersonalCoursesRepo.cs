@@ -30,9 +30,9 @@ namespace BL.BLlmplementaiton
             throw new NotImplementedException();
         }
 
-        PersonalCourses IPersonalCoursesRepo.Update(int id, PersonalCourses item)
-        {
-            throw new NotImplementedException();
-        }
+    PersonalCourses IPersonalCoursesRepo.Update(int id, PersonalCourses item)
+    {
+        throw new NotImplementedException();
     }
+}
 }

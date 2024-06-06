@@ -9,7 +9,7 @@ namespace Dal.Dalapi
     public interface IRepo<T>
     {
          List<T> GetAll();
-        T Get(string name);
+        T Get(int id);
         T Add(T item);
         T Update(int id,T item);   
         T Delete(int id);

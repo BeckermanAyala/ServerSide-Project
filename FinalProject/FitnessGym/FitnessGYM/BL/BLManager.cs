@@ -1,21 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BL.BLapi;
 using BL.BLlmplementaiton;
-using BL.BLapi;
-using BL.Bo;
 using Dal;
-
-
 using Microsoft.Extensions.DependencyInjection;
-
-
-
-
-
-
 
 namespace BL
 {
@@ -24,39 +10,35 @@ namespace BL
         public IFullCoursesRepo fullCourses { get; }
         public IFullScheduleRepo fullSchedule { get; }
         public IFullTeacherRepo fullTeacher { get; }
-        public IPersonalCoursesRepo personalCourses { get; set; }
+        public IPersonalCoursesRepo personalCourses { get; }
         public IPersonalSchduleRepo personalSchdule { get; }
         public IPersonalSubscriberRepo personalSubscriber { get; }
         public IPersonalTeacherRepo personalTeacher { get; }
+        private readonly ServiceProvider serviceProvider;
 
-        public BLManager()
+        public BLManager(string connectionString)
         {
-            ServiceCollection services = new ServiceCollection();
+            var services = new ServiceCollection();
 
-            services.AddSingleton<DalManager>();
-            services.AddScoped<IFullCoursesRepo, FullCoursesRepo>();  
+            services.AddSingleton<DalManager>(sp => new DalManager(connectionString));
+            services.AddScoped<IFullCoursesRepo, FullCoursesRepo>();
             services.AddScoped<IFullScheduleRepo, FullScheduleRepo>();
             services.AddScoped<IFullTeacherRepo, FullTeacherRepo>();
             services.AddScoped<IPersonalCoursesRepo, PersonalCoursesRepo>();
             services.AddScoped<IPersonalSchduleRepo, PersonalSchduleRepo>();
             services.AddScoped<IPersonalSubscriberRepo, PersonalSubscriberRepo>();
             services.AddScoped<IPersonalTeacherRepo, PersonalTeacherRepo>();
+            services.AddAutoMapper(typeof(AutoMapper.AutoMapperProfile));
 
-            ServiceProvider provider = services.BuildServiceProvider();
+            serviceProvider = services.BuildServiceProvider();
 
-            fullCourses = provider.GetRequiredService<IFullCoursesRepo>();
-            fullSchedule = provider.GetRequiredService<IFullScheduleRepo>();
-
-            fullTeacher = provider.GetRequiredService<IFullTeacherRepo>();
-
-            personalCourses = provider.GetRequiredService<IPersonalCoursesRepo>();
-
-            personalSchdule = provider.GetRequiredService<IPersonalSchduleRepo>();
-            personalSubscriber = provider.GetRequiredService<IPersonalSubscriberRepo>();
-            personalTeacher = provider.GetRequiredService<IPersonalTeacherRepo>();
-
-
+            fullCourses = serviceProvider.GetRequiredService<IFullCoursesRepo>();
+            fullSchedule = serviceProvider.GetRequiredService<IFullScheduleRepo>();
+            fullTeacher = serviceProvider.GetRequiredService<IFullTeacherRepo>();
+            personalCourses = serviceProvider.GetRequiredService<IPersonalCoursesRepo>();
+            personalSchdule = serviceProvider.GetRequiredService<IPersonalSchduleRepo>();
+            personalSubscriber = serviceProvider.GetRequiredService<IPersonalSubscriberRepo>();
+            personalTeacher = serviceProvider.GetRequiredService<IPersonalTeacherRepo>();
         }
-
     }
 }

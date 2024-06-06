@@ -9,5 +9,6 @@ namespace Dal.Dalapi
 {
     public interface ICourses : IRepo<Course>
     {
+        List<Course> GetCoursesByDay(string day);
     }
 }

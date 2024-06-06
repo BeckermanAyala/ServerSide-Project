@@ -1177,6 +1177,21 @@
           }
         }
       },
+      "BL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "AutoMapper": "12.0.1",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
+          "Dal": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BL.dll": {}
+        }
+      },
       "Dal/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -3366,6 +3381,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "BL/1.0.0": {
+      "type": "project",
+      "path": "../BL/BL.csproj",
+      "msbuildProject": "../BL/BL.csproj"
+    },
     "Dal/1.0.0": {
       "type": "project",
       "path": "../DBAccess/Dal.csproj",
@@ -3376,6 +3396,7 @@
     "net7.0": [
       "AutoMapper >= 12.0.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
+      "BL >= 1.0.0",
       "Dal >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 7.0.9",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.14",
@@ -3415,6 +3436,9 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "C:\\Users\\USER\\Desktop\\pro\\ServerSide-Project\\FinalProject\\FitnessGym\\FitnessGYM\\BL\\BL.csproj": {
+              "projectPath": "C:\\Users\\USER\\Desktop\\pro\\ServerSide-Project\\FinalProject\\FitnessGym\\FitnessGYM\\BL\\BL.csproj"
+            },
             "C:\\Users\\USER\\Desktop\\pro\\ServerSide-Project\\FinalProject\\FitnessGym\\FitnessGYM\\DBAccess\\Dal.csproj": {
               "projectPath": "C:\\Users\\USER\\Desktop\\pro\\ServerSide-Project\\FinalProject\\FitnessGym\\FitnessGYM\\DBAccess\\Dal.csproj"
             }

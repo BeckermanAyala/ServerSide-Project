@@ -25,20 +25,6 @@ namespace BL.BLlmplementaiton
             this.map = map;
         }
 
-
-    
-        //public FullCourses Add(Course course)
-        //{
-        //    Dal.Do.Course course1=map.Map<Dal.Do.Course>(course);
-        //    coursesRepo.Add(course1);
-        //    Bo.FullCourses course2 = map.Map<Bo.FullCourses>(course1);
-        //    return course2;
-        //    //לא מספיק ברור
-        //}
-
-
-
-
         public List<FullCourses> GetAll()
         {
             List<FullCourses> listBl = new();
@@ -46,6 +32,10 @@ namespace BL.BLlmplementaiton
             data.ForEach(course => listBl.Add(map.Map<FullCourses>(course)));
             return listBl;  
         }
-
+        public List<string> GetCourseNamesByDay(string day)
+        {
+            var courses = coursesRepo.GetCoursesByDay(day);
+            return courses.Select(c => c.Name).ToList();
+        }
     }
 }

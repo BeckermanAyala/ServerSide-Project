@@ -25,32 +25,32 @@ namespace BL.BLlmplementaiton
         }
 
 
-        List<FullTeacher> IFullTeacherRepo.GetAll()
+        public List<FullTeacher> GetAll()
         {
             List<FullTeacher> listTeacherBl = new();
             var data = teacherRepo.GetAll();
-            data.ForEach(teacher => listTeacherBl.Add(map.Map<FullTeacher>(teacher)));
+            data.ForEach(teacher => listTeacherBl.Add(map.Map<FullTeacher>( teacher )));
             return listTeacherBl;
 
         }
 
-        FullTeacher IFullTeacherRepo.Get(string name)
-        {
-            
-            var teacher = teacherRepo.Get(name);
+        //FullTeacher IFullTeacherRepo.Get(string name)
+        //{
 
-            if (teacher == null)
-            {
-                return null;
-            }
+        //    var teacher = teacherRepo.Get(name);
 
-            FullTeacher fullTeacher = map.Map<FullTeacher>(teacher);
+        //    if (teacher == null)
+        //    {
+        //        return null;
+        //    }
 
-            
-            fullTeacher.Courses = map.Map<List<Course>>(teacher.Courses);
+        //    FullTeacher fullTeacher = map.Map<FullTeacher>(teacher);
 
-            return fullTeacher;
-        }
+
+        //    fullTeacher.Courses = map.Map<List<Course>>(teacher.Courses);
+
+        //    return fullTeacher;
+        //}
     }
 
 

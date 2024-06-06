@@ -10,9 +10,9 @@ namespace BL.BLapi
     public interface IPersonalSubscriberRepo
     {
         List<PersonalSubscriber> GetAll();
-        PersonalSubscriber Get(int id);
-        PersonalSubscriber Add(PersonalSubscriber item);
-        PersonalSubscriber Update(int id, PersonalSubscriber item);
-        PersonalSubscriber Delete(int id);
+        //PersonalSubscriber Get(int id);
+        //PersonalSubscriber Add(PersonalSubscriber item);
+        //PersonalSubscriber Update(int id, PersonalSubscriber item);
+        //PersonalSubscriber Delete(int id);
     }
 }

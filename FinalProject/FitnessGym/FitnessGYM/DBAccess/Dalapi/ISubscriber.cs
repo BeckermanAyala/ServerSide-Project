@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace Dal.Dalapi
 {
-    public interface ISubscriber : IRepo<Subscriber>
+    public interface ISubscriber
     {
+         List<Subscriber> GetAll();
     }
 }

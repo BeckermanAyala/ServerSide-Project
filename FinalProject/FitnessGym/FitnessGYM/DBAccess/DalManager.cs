@@ -1,36 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Dal.Dalapi;
+﻿using Dal.Dalapi;
 using Dal.DalImplementation;
 using Dal.Do;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Dal
 {
     public class DalManager
     {
-        public ICourses courses {  get; set; }  
+        public ICourses courses { get; set; }
         public ISchedule schedule { get; set; }
         public ISubscriber subscriber { get; set; }
         public ITeacher teacher { get; set; }
-        public DalManager() {
-            ServiceCollection services = new ServiceCollection();
-            services.AddSingleton<LibraryContext>();
+        private readonly ServiceProvider serviceProvider;
+
+        public DalManager(string connectionString)
+        {
+            var services = new ServiceCollection();
+            services.AddDbContext<LibraryContext>(options =>options.UseSqlServer(connectionString));
+                
+
             services.AddScoped<ICourses, CoursesRepo>();
             services.AddScoped<ISchedule, ScheduleRepo>();
             services.AddScoped<ISubscriber, SubscriberRepo>();
             services.AddScoped<ITeacher, TeacherRepo>();
 
-            ServiceProvider servicesProvider = services.BuildServiceProvider();
+            serviceProvider = services.BuildServiceProvider();
 
-            courses = servicesProvider.GetRequiredService<ICourses>();
-            schedule = servicesProvider.GetRequiredService<ISchedule>();
-            subscriber = servicesProvider.GetRequiredService<ISubscriber>();
-            teacher = servicesProvider.GetRequiredService<ITeacher>();
-
-        } 
+            courses = serviceProvider.GetRequiredService<ICourses>();
+            schedule = serviceProvider.GetRequiredService<ISchedule>();
+            subscriber = serviceProvider.GetRequiredService<ISubscriber>();
+            teacher = serviceProvider.GetRequiredService<ITeacher>();
+        }
     }
 }

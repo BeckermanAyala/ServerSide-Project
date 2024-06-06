@@ -3,6 +3,7 @@ using Dal.Do;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,8 +18,8 @@ namespace Dal.DalImplementation
         } 
         public  List<Course> GetAll()
         {
-            List<Course> result = context.Courses.ToList();
-            return result;
+            //IEnumerable<Course> courses = context.Courses;
+            return context.Courses.ToList();
         }
 
         public Course Get(int CodeCourse)
@@ -34,6 +35,11 @@ namespace Dal.DalImplementation
             return course;    
         }
             return null;
+        }
+        public List<Course> GetCoursesByDay(string day)
+        {
+            // Get all courses and filter them on the client-side
+            return context.Courses.ToList().Where(c => c.Day.Equals(day, StringComparison.OrdinalIgnoreCase)).ToList();
         }
 
         public Course Update(int CodeCourse, Course course)

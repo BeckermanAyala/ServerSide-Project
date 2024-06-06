@@ -3,7 +3,7 @@
 namespace FitnessGYM.Controllers
 {
     [ApiController]
-    [Route("/Controller")]
+    [Route( "api/[controller]")]
     public class GymController : ControllerBase
     {
 

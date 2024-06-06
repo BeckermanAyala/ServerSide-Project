@@ -34,6 +34,7 @@ namespace Dal
             string directryAboveBin = str.Substring(0, str.IndexOf("\\bin"));
             string twoDirectoriesAboveBin = directryAboveBin.Substring(0, directryAboveBin.LastIndexOf("\\"));
             connStr = string.Format(connStr, twoDirectoriesAboveBin);
+            Console.WriteLine($"Connection String: {connStr}");
             return connStr;
         }
     }

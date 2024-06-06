@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BL.Bo;
 using Dal.Do;
 using System;
 using System.Collections.Generic;
@@ -12,14 +13,14 @@ namespace BL.AutoMapper
     {
         public AutoMapperProfile()
         {
-            CreateMap<Course, Dal.Do.Course>()
-           .ForMember(dest => dest.CodeCourse, opt => opt.MapFrom(src => GetCodeCourse(src)))
-           .ForMember(dest => dest.MaxParticipants, opt => opt.MapFrom(src => GetMaxParticipants(src)))
+            CreateMap<FullCourses, Dal.Do.Course>()
+           //.ForMember(dest => dest.CodeCourse, opt => opt.MapFrom(src => GetCodeCourse(src)))
+           //.ForMember(dest => dest.MaxParticipants, opt => opt.MapFrom(src => GetMaxParticipants(src)))
            .ReverseMap();
 
-            CreateMap<Subscriber, Dal.Do.Subscriber>()
-           .ForMember(dest => dest.SubscriberId, opt => opt.MapFrom(src => GetSubscriberId(src)))
-           .ForMember(dest => dest.Password, opt => opt.MapFrom(src => GetPassword(src)))
+            CreateMap<PersonalSubscriber, Dal.Do.Subscriber>()
+           //.ForMember(dest => dest.SubscriberId, opt => opt.MapFrom(src => GetSubscriberId(src)))
+           //.ForMember(dest => dest.Password, opt => opt.MapFrom(src => GetPassword(src)))
            .ReverseMap();
 
             CreateMap<Schedule, Dal.Do.Schedule>()
@@ -27,8 +28,8 @@ namespace BL.AutoMapper
            .ForMember(dest => dest.CodeCourse, opt => opt.MapFrom(src => GetCodeCourse2(src)))
            .ReverseMap();
 
-            CreateMap<Teacher, Dal.Do.Teacher>()
-           .ForMember(dest => dest.TeachersId, opt => opt.MapFrom(src => GetTeachersId(src)))
+            CreateMap<FullTeacher, Dal.Do.Teacher>()
+           //.ForMember(dest => dest.TeachersId, opt => opt.MapFrom(src => GetTeachersId(src)))
            .ReverseMap();
 
         }

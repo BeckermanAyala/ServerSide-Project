@@ -9,10 +9,10 @@ namespace BL.BLapi
 {
     public interface IPersonalTeacherRepo
     {
-        List<PersonalTeacher> GetAll();
-        PersonalTeacher Get(int id);
-        PersonalTeacher Add(PersonalTeacher item);
-        PersonalTeacher Update(int id, PersonalTeacher item);
-        PersonalTeacher Delete(int id);
+        //List<PersonalTeacher> GetAll();
+        //PersonalTeacher Get(int id);
+        //PersonalTeacher Add(PersonalTeacher item);
+        //PersonalTeacher Update(int id, PersonalTeacher item);
+        //PersonalTeacher Delete(int id);
     }
 }
